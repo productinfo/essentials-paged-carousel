@@ -34,10 +34,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
-    // Configure carousel
-    self.carousel.frictionCoefficient = 1.5;
-    self.carousel.momentumAnimationCurve = [SEssentialsAnimationCurve curveForCurveType:SEssentialsAnimationCurveTypeLinear];
     
     // Create a PagedCarouselHelper, passing it our carousel and pagecontrol
     _helper = [[PagedCarouselHelper alloc] initWithCarousel:self.carousel pageControl:self.pageControl];
@@ -58,6 +54,9 @@
         // Add the UILabel to the PagedCarouselHelper
         [_helper addView:view];
     }
+    
+    // Tweak carousel animation to work nicely with page control
+    self.carousel.momentumAnimationCurve = [SEssentialsAnimationCurve curveForCurveType:SEssentialsAnimationCurveTypeLinear];
 }
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation

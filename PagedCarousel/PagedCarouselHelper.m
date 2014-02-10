@@ -24,8 +24,8 @@
 @implementation PagedCarouselHelper {
     NSMutableArray *_carouselViews;
     NSMutableArray *_wrapperViews;
-    float _wrapperHeight;
-    float _wrapperWidth;
+    CGFloat _wrapperHeight;
+    CGFloat _wrapperWidth;
 }
 
 // Initialize a PagedCarouselHelper with a carousel and a pageControl
@@ -69,12 +69,13 @@
     [_pageControl addTarget:self action:@selector(pageChange:) forControlEvents:UIControlEventValueChanged];
 }
 
--(void)setItemsPerPage:(int)itemsPerPage
+-(void)setItemsPerPage:(NSInteger)itemsPerPage
 {
-    _itemsPerPage = itemsPerPage;    [self resetWrappers];
+    _itemsPerPage = itemsPerPage;
+    [self resetWrappers];
 }
 
--(void)setItemPadding:(float)itemPadding
+-(void)setItemPadding:(CGFloat)itemPadding
 {
     _itemPadding = itemPadding;
     [self resetWrappers];
@@ -99,7 +100,7 @@
 }
 
 // Add the given view to a wrapper view. viewIndex should be the index of the view in _carouselViews
--(void)addViewToWrapper:(UIView *)view viewIndex:(int)index
+-(void)addViewToWrapper:(UIView *)view viewIndex:(NSInteger)index
 {
     // Calculate the height and width of the wrapper, based on itemsPerPage and itemPadding
     if (!_wrapperHeight) {
@@ -118,7 +119,7 @@
     }
     
     // Work out where the view should be positioned in the wrapper
-    int indexInWrapper = index % self.itemsPerPage;
+    NSInteger indexInWrapper = index % self.itemsPerPage;
     if (self.orientation == SEssentialsCarouselOrientationHorizontal) {
         view.center = CGPointMake((view.frame.size.width + self.itemPadding)*indexInWrapper + view.frame.size.width*0.5,
                                   view.frame.size.height*0.5);
@@ -165,7 +166,7 @@
     return [_wrapperViews count];
 }
 
--(UIView *)carousel:(SEssentialsCarousel *)carousel itemAtIndex:(int)index
+-(UIView *)carousel:(SEssentialsCarousel *)carousel itemAtIndex:(NSInteger)index
 {
     return _wrapperViews[index];
 }
