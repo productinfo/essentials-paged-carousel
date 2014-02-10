@@ -28,6 +28,8 @@
     CGFloat _wrapperWidth;
 }
 
+#pragma mark - Initialization
+
 // Initialize a PagedCarouselHelper with a carousel and a pageControl
 -(id) initWithCarousel:(SEssentialsCarousel *)carousel pageControl:(UIPageControl *)pageControl
 {
@@ -46,6 +48,8 @@
     return self;
 }
 
+# pragma mark - Setters
+
 // Set the PagedCarouselHelper's carousel
 -(void)setCarousel:(SEssentialsCarousel *)carousel
 {
@@ -62,7 +66,7 @@
     _pageControl = pageControl;
     
     // Set up the number of pages and the current page
-    _pageControl.numberOfPages = [_carouselViews count];
+    _pageControl.numberOfPages = [_wrapperViews count];
     _pageControl.currentPage = self.carousel.contentOffset;
     
     // Set a target so that when the page value changes we update the carousel
@@ -81,6 +85,9 @@
     [self resetWrappers];
 }
 
+
+# pragma mark - Public methods for adding views
+
 // Add a UIView to the carousel
 -(void)addView:(UIView *)view
 {
@@ -98,6 +105,9 @@
     }
     [self updateViews];
 }
+
+
+# pragma mark - Private methods
 
 // Add the given view to a wrapper view. viewIndex should be the index of the view in _carouselViews
 -(void)addViewToWrapper:(UIView *)view viewIndex:(NSInteger)index
@@ -138,26 +148,35 @@
     _wrapperHeight = 0;
     _wrapperWidth = 0;
     
+    // Remove all current wrapper views
     [_wrapperViews removeAllObjects];
+    
+    // Iterate through carousel views and re-add them to a wrapper view
     int count = 0;
     for (UIView *view in _carouselViews) {
         [self addViewToWrapper:view viewIndex:count++];
     }
+    
+    // Update the page control and carousel
     [self updateViews];
 }
 
-// Update the page control and carousel to reflect the updated views
+// Update the page control and carousel to reflect changes in views
 -(void)updateViews
 {
     self.pageControl.numberOfPages = [_wrapperViews count];
     [self.carousel reloadData];
 }
 
+
+#pragma mark - UIPageControl target method
+
 // Update the carousel value when the page control value is changed
 -(void)pageChange:(id)sender
 {
     [self.carousel setContentOffset:self.pageControl.currentPage animated:YES withDuration:self.animationDuration];
 }
+
 
 #pragma mark - SEssentialsCarouselDataSource methods
 
@@ -170,6 +189,7 @@
 {
     return _wrapperViews[index];
 }
+
 
 #pragma mark - SEssentialsCarouselDelegate methods
 
