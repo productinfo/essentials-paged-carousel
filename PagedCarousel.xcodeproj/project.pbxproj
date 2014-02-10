@@ -17,21 +17,8 @@
 		68F0C2E41861C0D300461795 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68F0C2E21861C0D300461795 /* Main.storyboard */; };
 		68F0C2E71861C0D300461795 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F0C2E61861C0D300461795 /* ViewController.m */; };
 		68F0C2E91861C0D300461795 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68F0C2E81861C0D300461795 /* Images.xcassets */; };
-		68F0C2F01861C0D300461795 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68F0C2EF1861C0D300461795 /* XCTest.framework */; };
-		68F0C2F11861C0D300461795 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68F0C2D01861C0D300461795 /* Foundation.framework */; };
-		68F0C2F21861C0D300461795 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68F0C2D41861C0D300461795 /* UIKit.framework */; };
 		68F0C3061861C54800461795 /* ShinobiEssentials.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68F0C3051861C54800461795 /* ShinobiEssentials.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		68F0C2F31861C0D300461795 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 68F0C2C51861C0D300461795 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 68F0C2CC1861C0D300461795;
-			remoteInfo = PagedCarousel;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		6814A074187C4D9800F191DD /* PagedCarouselHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PagedCarouselHelper.h; sourceTree = "<group>"; };
@@ -50,8 +37,6 @@
 		68F0C2E51861C0D300461795 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		68F0C2E61861C0D300461795 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		68F0C2E81861C0D300461795 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		68F0C2EE1861C0D300461795 /* PagedCarouselTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PagedCarouselTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		68F0C2EF1861C0D300461795 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		68F0C3051861C54800461795 /* ShinobiEssentials.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShinobiEssentials.framework; path = Library/Frameworks/ShinobiEssentials.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
@@ -64,16 +49,6 @@
 				68F0C2D31861C0D300461795 /* CoreGraphics.framework in Frameworks */,
 				68F0C2D51861C0D300461795 /* UIKit.framework in Frameworks */,
 				68F0C2D11861C0D300461795 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		68F0C2EB1861C0D300461795 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				68F0C2F01861C0D300461795 /* XCTest.framework in Frameworks */,
-				68F0C2F21861C0D300461795 /* UIKit.framework in Frameworks */,
-				68F0C2F11861C0D300461795 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,7 +68,6 @@
 			isa = PBXGroup;
 			children = (
 				68F0C2CD1861C0D300461795 /* PagedCarousel.app */,
-				68F0C2EE1861C0D300461795 /* PagedCarouselTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -105,7 +79,6 @@
 				68F0C2D01861C0D300461795 /* Foundation.framework */,
 				68F0C2D21861C0D300461795 /* CoreGraphics.framework */,
 				68F0C2D41861C0D300461795 /* UIKit.framework */,
-				68F0C2EF1861C0D300461795 /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -157,24 +130,6 @@
 			productReference = 68F0C2CD1861C0D300461795 /* PagedCarousel.app */;
 			productType = "com.apple.product-type.application";
 		};
-		68F0C2ED1861C0D300461795 /* PagedCarouselTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 68F0C3021861C0D400461795 /* Build configuration list for PBXNativeTarget "PagedCarouselTests" */;
-			buildPhases = (
-				68F0C2EA1861C0D300461795 /* Sources */,
-				68F0C2EB1861C0D300461795 /* Frameworks */,
-				68F0C2EC1861C0D300461795 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				68F0C2F41861C0D300461795 /* PBXTargetDependency */,
-			);
-			name = PagedCarouselTests;
-			productName = PagedCarouselTests;
-			productReference = 68F0C2EE1861C0D300461795 /* PagedCarouselTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -183,11 +138,6 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Alison Clarke";
-				TargetAttributes = {
-					68F0C2ED1861C0D300461795 = {
-						TestTargetID = 68F0C2CC1861C0D300461795;
-					};
-				};
 			};
 			buildConfigurationList = 68F0C2C81861C0D300461795 /* Build configuration list for PBXProject "PagedCarousel" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -203,7 +153,6 @@
 			projectRoot = "";
 			targets = (
 				68F0C2CC1861C0D300461795 /* PagedCarousel */,
-				68F0C2ED1861C0D300461795 /* PagedCarouselTests */,
 			);
 		};
 /* End PBXProject section */
@@ -216,13 +165,6 @@
 				68F0C2E91861C0D300461795 /* Images.xcassets in Resources */,
 				68F0C2DB1861C0D300461795 /* InfoPlist.strings in Resources */,
 				68F0C2E41861C0D300461795 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		68F0C2EC1861C0D300461795 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,22 +182,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		68F0C2EA1861C0D300461795 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		68F0C2F41861C0D300461795 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 68F0C2CC1861C0D300461795 /* PagedCarousel */;
-			targetProxy = 68F0C2F31861C0D300461795 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		68F0C2D91861C0D300461795 /* InfoPlist.strings */ = {
@@ -365,6 +292,7 @@
 				INFOPLIST_FILE = "PagedCarousel/PagedCarousel-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -383,49 +311,8 @@
 				INFOPLIST_FILE = "PagedCarousel/PagedCarousel-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		68F0C3031861C0D400461795 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PagedCarousel.app/PagedCarousel";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PagedCarousel/PagedCarousel-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "PagedCarouselTests/PagedCarouselTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		68F0C3041861C0D400461795 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PagedCarousel.app/PagedCarousel";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PagedCarousel/PagedCarousel-Prefix.pch";
-				INFOPLIST_FILE = "PagedCarouselTests/PagedCarouselTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
@@ -446,15 +333,6 @@
 			buildConfigurations = (
 				68F0C3001861C0D400461795 /* Debug */,
 				68F0C3011861C0D400461795 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		68F0C3021861C0D400461795 /* Build configuration list for PBXNativeTarget "PagedCarouselTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				68F0C3031861C0D400461795 /* Debug */,
-				68F0C3041861C0D400461795 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

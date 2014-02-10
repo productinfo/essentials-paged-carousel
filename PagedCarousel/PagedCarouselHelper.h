@@ -24,11 +24,27 @@
 
 @interface PagedCarouselHelper : NSObject<SEssentialsCarouselDataSource, SEssentialsCarouselDelegate>
 
-@property (strong, nonatomic) SEssentialsCarousel *carousel;
-@property (strong, nonatomic) UIPageControl *pageControl;
+@property (nonatomic, strong) SEssentialsCarousel *carousel;
+@property (nonatomic, strong) UIPageControl *pageControl;
+
+/** The number of views to display on each page. Defaults to 1 */
+@property (nonatomic, assign) NSInteger itemsPerPage;
+
+/** The padding between the views on a single page, in pixels. Defaults to 5px */
+@property (nonatomic, assign) CGFloat itemPadding;
+
+/** The orientation of the views within a page. Defaults to SEssentialsCarouselOrientationHorizontal */
+@property (nonatomic, assign) SEssentialsCarouselOrientation orientation;
+
+/** The duration in seconds of the animated scroll when the user changes page via the page control. Defaults to 0.5s */
+@property (nonatomic, assign) CGFloat animationDuration;
 
 -(id) initWithCarousel:(SEssentialsCarousel*)carousel pageControl:(UIPageControl*)pageControl;
+
+/** Add a single view to the carousel */
 -(void) addView:(UIView*)view;
+
+/** Add an array of UIViews to the carousel. */
 -(void) addViews:(NSArray*)views;
 
 @end

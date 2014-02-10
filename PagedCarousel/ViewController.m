@@ -23,7 +23,7 @@
 #import "PagedCarouselHelper.h"
 
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet SEssentialsCarouselCylindrical *carousel;
+@property (weak, nonatomic) IBOutlet SEssentialsCarouselLinear3D *carousel;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 @end
 
@@ -34,22 +34,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
-    // Configure carousel
-    self.carousel.frontFacing = YES;
-    self.carousel.frictionCoefficient = 1.5;
-    self.carousel.itemSpacingFactor = 0.8;
-    self.carousel.momentumAnimationCurve = [SEssentialsAnimationCurve curveForCurveType:SEssentialsAnimationCurveTypeLinear];
     
     // Create a PagedCarouselHelper, passing it our carousel and pagecontrol
     _helper = [[PagedCarouselHelper alloc] initWithCarousel:self.carousel pageControl:self.pageControl];
+    _helper.itemsPerPage = 3;
     
     int numberOfItems = 10;
     
     // Set up some views and add them to the carousel
     for (int i=0; i<numberOfItems; i++) {
         // Create a UILabel with a number and coloured background
-        UILabel *view = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 400, 400)];
+        UILabel *view = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 300)];
         view.text = [NSString stringWithFormat:@"%i", i+1];
         view.textColor = [UIColor whiteColor];
         view.textAlignment = NSTextAlignmentCenter;
@@ -59,6 +54,14 @@
         // Add the UILabel to the PagedCarouselHelper
         [_helper addView:view];
     }
+    
+    // Tweak carousel animation to work nicely with page control
+    self.carousel.momentumAnimationCurve = [SEssentialsAnimationCurve curveForCurveType:SEssentialsAnimationCurveTypeLinear];
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    [self.carousel reloadData];
 }
 
 - (void)didReceiveMemoryWarning
