@@ -1,7 +1,7 @@
 ShinobiEssentials Paged Carousel (Objective-C)
 =====================
 
-This project provides a simple helper class (`PagedCarouselHelper`) which is reusable in your own project, and demonstrates how to use it. 
+This project provides a simple helper class (`PagedCarouselHelper`) which is reusable in your own project, and demonstrates how to use it. There is an accompanying blog post [here](http://www.shinobicontrols.com/blog/posts/2014/02/11/building-a-paged-carousel).
 
 ![Screenshot](screenshot.png?raw=true)
 
